@@ -22,17 +22,18 @@ Language: [English](README_EN.md)
 使用案例
 ------------
 #### 页面编辑模式
->  
-启动命令：`spy-debugger -w true`  
-<img src="demo/img/spy-debugger-w.gif" width="300px" />
+>  启动命令：`spy-debugger -w true`  
+
+![](https://cdn.jsdelivr.net/gh/xianzou/static_files@master/images/spy-debugger-w.gif) 
 
 #### weiner页面调试界面
->  
-<img src="demo/img/demo.png" width="600px" />
+
+
+![](https://cdn.jsdelivr.net/gh/xianzou/static_files@master/images/demo.png) 
 
 #### anyproxy抓包界面
->  
-<img src="demo/img/AnyProxy.png" width="600px" />
+
+![](https://cdn.jsdelivr.net/gh/xianzou/static_files@master/images/AnyProxy.png) 
 
 
 
