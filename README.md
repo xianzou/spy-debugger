@@ -110,8 +110,85 @@ spy-debugger -b false
 spy-debugger -c true
 ```
 
+
+
+## 调试HTTPS
+
+运行代码
+
+```JS
+spy-debugger initCA
+```
+
+启动后会在 `C:\Users\Administrator\node-mitmproxy` 下生成一个证书文件，把证书文件导入手机安装
+
+![](https://cdn.jsdelivr.net/gh/xianzou/static_files@master/images/ccc.png) 
+
+手机安装完后执行命令
+
+```JS
+spy-debugger
+```
+
+在打开 `HTTPS` 的页面就好了；
+
+## 其他问题
+
+### 踩坑1（针对ios）
+
+**![image.png](https://cdn.jsdelivr.net/gh/xianzou/static_files@master/images/1567495382520-d6b663c9-272c-4ee8-b783-8354bab41088.png)**
+
+如果按照官方教程来，第四步死活打不开官方所给的链接。
+
+#### 解决方法
+
+1. 先打开 跑完 spy-debugger命令后的网页，用相机扫描所给的二维码，并用safari浏览器打开；
+
+
+
+![微信图片_20190903163818.png](https://cdn.jsdelivr.net/gh/xianzou/static_files@master/images/1567500116590-4b3b70a0-f5f7-4b93-98cf-40860950ce2e.png)  
+
+
+
+1. 修改safari打开后的url链接，把127.0.0.1改成本机的ip；
+
+
+
+![微信图片_20190903164416.png](https://cdn.jsdelivr.net/gh/xianzou/static_files@master/images/1567500270646-f8b2a155-29b2-4f38-90ab-68b893991811.png)  
+
+
+
+1. 可以正常显示证书下载页面；
+
+
+
+![微信图片_20190903163829.jpg](https://cdn.jsdelivr.net/gh/xianzou/static_files@master/images/1567500327719-173c89c4-759c-49cd-96c4-d94cd2c62c4b.jpeg)  
+
+1. 然后下载安装；
+
+### 踩坑2（针对ios）
+
+如果按官方教程来，进行到最后，仍会有如下的提示：
+
+![微信图片_20190903153130.jpg](https://cdn.jsdelivr.net/gh/xianzou/static_files@master/images/1567495907856-16aac12b-f0da-4b69-926c-63f2892f6191.jpeg) 
+
+这是因为没有下载的证书完全信任导致。
+
+#### 解决方法：
+
+**通用 => 关于本机 => 证书信任设置 ，然后选择对应的证书信任即可。**
+
+即可愉快的调试了~
+
+#### 补充：
+
+由于新版ios系统所致，证书需要在通用=>描述里面手动点击安装=>安装完后再进入关于本机的证书信任里点击信任才行
+
+
+
 更多
 ------------
+
 - 修复`weinre`在`node.js` V7版本会崩溃的bug
 
 - 对`weinre`在页面`document ready`事件前，无法打印console.log日志进行了增强修复。
